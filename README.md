@@ -2,22 +2,22 @@
 An AI-powered job recommendation system that uses semantic search to match resumes with job postings. Instead of relying on simple keyword matching, this system understands the context and meaning of professional experience using Transformer-based embeddings.
 
 ## Key Features
-Semantic Matching: Uses the all-MiniLM-L6-v2 Sentence-Transformer model to map resumes and jobs into a shared 384-dimensional vector space.
+**Semantic Matching:** Uses the all-MiniLM-L6-v2 Sentence-Transformer model to map resumes and jobs into a shared 384-dimensional vector space.
 
-Multi-Format Support: Robust extraction logic for .pdf, .docx, and .txt files.
+**Multi-Format Support:** Robust extraction logic for .pdf, .docx, and .txt files.
 
-Persistent Vector Storage: Powered by ChromaDB for fast, high-dimensional similarity searches.
+**Persistent Vector Storage:** Powered by ChromaDB for fast, high-dimensional similarity searches.
 
-Production-Ready Architecture: Built with Pydantic for data validation, structured logging, and modular configuration.
+**Production-Ready Architecture:** Built with Pydantic for data validation, structured logging, and modular configuration.
 
 ## Tech Stack
-Language: Python 3.11+
+Language: *Python 3.11+*
 
-Dependency Management: uv
+Dependency Management: *uv*
 
-ML Frameworks: Sentence-Transformers (PyTorch), Hugging Face
+ML Frameworks: *Sentence-Transformers (PyTorch), Hugging Face*
 
-Database: ChromaDB (Vector Database)
+Database: *ChromaDB (Vector Database)*
 
 Validation: Pydantic v2
 
@@ -35,24 +35,37 @@ hot-job-recommender/
 
 ## Getting Started
 1. Prerequisites
+
 Ensure you have uv installed. if not, install it via:
+
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 2. Installation
+
 Clone the repository and install dependencies:
+
 git clone https://github.com/likhithaguggilla/hot-job-recommender.git
+
 cd hot-job-recommender
+
 uv sync
 
 3. Environment Setup
+
 Create a .env file in the root directory:
+
 PROJECT_NAME="Hot Job Recommender"
+
 CHROMA_PATH="./data/chroma_db"
-# ADZUNA_APP_ID="your_id"
-# ADZUNA_APP_KEY="your_key"
+
+ADZUNA_APP_ID="your_id"
+
+ADZUNA_APP_KEY="your_key"
 
 4. Running the Scraper
+
 To populate the database with initial mock data:
+
 uv run python -m src.scraper.main
 
 ## Roadmap & Enhancements
